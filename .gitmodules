@@ -1,0 +1,3 @@
+[submodule "algods/algorithms-sedgewick-robert/third_party/cutils"]
+	path = algods/algorithms-sedgewick-robert/third_party/cutils
+	url = https://github.com/bagaswh/c-utils

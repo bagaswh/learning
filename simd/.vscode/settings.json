@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "typeinfo": "c",
+        "stdio.h": "c",
+        "immintrin.h": "c",
+        "common.h": "c"
+    }
+}
