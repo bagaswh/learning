@@ -1,8 +1,10 @@
 #ifndef UNIONS_H
 #define UNIONS_H
 
+#include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
+#include <string.h>
 
 #include "common.h"
 
@@ -32,52 +34,6 @@ union xmm_val {
 	float m_f32[4];
 	double m_f64[2];
 };
-
-static void xmm_val_print(union xmm_val *v, enum val_type type) {
-	size_t n = 0;
-	char *field_name;
-
-#define FIELD_INFO(field, ctype, fmt)                                                 \
-	n = sizeof(((union xmm_val *)0)->field) / sizeof(((union xmm_val *)0)->field[0]); \
-	field_name = #field;                                                              \
-	for (size_t i = 0; i < n; i++) {                                                  \
-		printf("%s[%zu] = " fmt "\n", field_name, i, ((ctype *)v->field)[i]);         \
-	}                                                                                 \
-	printf("\n");
-
-	if (type & VAL_TYPE_I8) {
-		FIELD_INFO(m_i8, int8_t, "%d")
-	}
-	if (type & VAL_TYPE_I16) {
-		FIELD_INFO(m_i16, int16_t, "%d")
-	}
-	if (type & VAL_TYPE_I32) {
-		FIELD_INFO(m_i32, int32_t, "%d")
-	}
-	if (type & VAL_TYPE_I64) {
-		FIELD_INFO(m_i64, int64_t, "%ld")
-	}
-	if (type & VAL_TYPE_U8) {
-		FIELD_INFO(m_u8, uint8_t, "%u")
-	}
-	if (type & VAL_TYPE_U16) {
-		FIELD_INFO(m_u16, uint16_t, "%u")
-	}
-	if (type & VAL_TYPE_U32) {
-		FIELD_INFO(m_u32, uint32_t, "%u")
-	}
-	if (type & VAL_TYPE_U64) {
-		FIELD_INFO(m_u64, uint64_t, "%lu")
-	}
-	if (type & VAL_TYPE_F32) {
-		FIELD_INFO(m_f32, float, "%f")
-	}
-	if (type & VAL_TYPE_F64) {
-		FIELD_INFO(m_f64, double, "%lf")
-	}
-
-#undef FIELD_INFO
-}
 
 union ymm_val {
 	u64 m_u64[4];

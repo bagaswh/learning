@@ -1,3 +1,6 @@
 [submodule "algods/algorithms-sedgewick-robert/third_party/cutils"]
 	path = algods/algorithms-sedgewick-robert/third_party/cutils
 	url = https://github.com/bagaswh/c-utils
+[submodule "simd/external/tuibox"]
+	path = simd/external/tuibox
+	url = https://github.com/Cubified/tuibox

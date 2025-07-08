@@ -3,6 +3,7 @@
         "typeinfo": "c",
         "stdio.h": "c",
         "immintrin.h": "c",
-        "common.h": "c"
+        "common.h": "c",
+        "tuibox.h": "c"
     }
 }
