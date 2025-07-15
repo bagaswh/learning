@@ -1,6 +1,7 @@
 #ifndef UNIONS_H
 #define UNIONS_H
 
+#include <stdalign.h>
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
@@ -33,7 +34,7 @@ union xmm_val {
 	i8 m_i8[16];
 	float m_f32[4];
 	double m_f64[2];
-};
+} __attribute__((aligned(16)));
 
 union ymm_val {
 	u64 m_u64[4];

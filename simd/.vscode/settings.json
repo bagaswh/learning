@@ -4,6 +4,10 @@
         "stdio.h": "c",
         "immintrin.h": "c",
         "common.h": "c",
-        "tuibox.h": "c"
+        "tuibox.h": "c",
+        "unions.h": "c",
+        "register_printer.h": "c",
+        "algorithm": "c",
+        "format": "c"
     }
 }
